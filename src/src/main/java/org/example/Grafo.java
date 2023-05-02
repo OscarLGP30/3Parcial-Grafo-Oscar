@@ -94,7 +94,7 @@ public class Grafo {
             System.out.println("Error: No se permiten bucles en el grafo.");
         }
     }
-    
+
     public void mover(Battleship barco1, Puerto puerto2) {
 Puerto puerto1 = barco1.getPuerto();
         grafo.addEdge(puerto1, puerto2);
