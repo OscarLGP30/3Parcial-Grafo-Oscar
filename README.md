@@ -1,6 +1,6 @@
 # 3Parcial-Grafo-Oscar
 
-Mi Repositorio: 
+Mi Repositorio: https://github.com/OscarLGP30/3Parcial-Grafo-Oscar.git
 
 Juego de barcos
 
