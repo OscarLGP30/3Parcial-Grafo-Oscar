@@ -1,0 +1,19 @@
+Inicio
+ |
+ V
+¿Se ha impactado una posición del barco?
+ |
+ V
+¿La posición está aislada?
+ |
+ V
+Incrementar contador de hits
+ |
+ V
+Marcar posición como ya no aislada
+ |
+ V
+¿El barco está hundido?
+ |
+ V
+Fin
