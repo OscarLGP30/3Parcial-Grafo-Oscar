@@ -4,7 +4,7 @@ Mi Repositorio: https://github.com/OscarLGP30/3Parcial-Grafo-Oscar.git
 
 Juego de barcos
 
-Se propone una extensión del juego hundir la flota en la que, en vez de jugar con un solo tipo de barco, se pueda jugar con tres tipos de barcos diferentes. Estos tres tipos diferentes de barcos van a ser acorazados (Battleship).
+Se propone una extensión del juego hundir la flota en la que se pueda jugar con un tipo de barcos. Estos tres tipos diferentes de barco (Battleship).
 
 En base a estas especificaciones se solicita que: 
 
