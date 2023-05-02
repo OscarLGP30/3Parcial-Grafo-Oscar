@@ -67,6 +67,62 @@ public class Main {
                         }
                 }
 
+                // Crear los puertos
+                Puerto puerto1 = new Puerto("Puerto 1",10);
+                Puerto puerto2 = new Puerto("Puerto 2",20);
+                Puerto puerto3 = new Puerto("Puerto 3",30);
+
+                // Crear los barcos
+                Battleship barco1 = new Battleship(puerto1);
+                Battleship barco2 = new Battleship(puerto2);
+                Battleship barco3 = new Battleship(puerto3);
+
+                // Crear las rutas
+                Ruta ruta1 = new Ruta(puerto1, puerto2, 500);
+                Ruta ruta2 = new Ruta(puerto2, puerto3, 300);
+                Ruta ruta3 = new Ruta(puerto1, puerto3, 700);
+
+                // Crear el grafo y agregar los puertos, barcos y rutas
+                Grafo grafo1 = new Grafo();
+                grafo1.agregarVertice(puerto1);
+                grafo1.agregarVertice(puerto2);
+                grafo1.agregarVertice(puerto3);
+                grafo1.agregarVertice(barco1.getPuertoActual());
+                grafo1.agregarVertice(barco2.getPuertoActual());
+                grafo1.agregarVertice(barco3.getPuertoActual());
+                grafo1.agregarBarco(puerto1, puerto2, ruta1.getDistancia());
+                grafo1.agregarBarco(puerto2, puerto3, ruta2.getDistancia());
+                grafo1.agregarBarco(puerto1, puerto3, ruta3.getDistancia());
+                grafo1.agregarBarco(puerto1, barco1.getPuertoActual(), 0);
+                grafo1.agregarBarco(puerto2, barco2.getPuertoActual(), 0);
+                grafo1.agregarBarco(puerto3, barco3.getPuertoActual(), 0);
+
+                // Mover el barco 1 desde puerto 1 a puerto 2
+                grafo1.mover(barco1, puerto2);
+
+                // Comprobar si el barco 1 ha llegado a puerto 2
+                if (barco1.getPuertoActual() == puerto2) {
+                        System.out.println("El barco 1 ha llegado a " + puerto2.getNombre());
+                }
+
+                // Mover el barco 2 desde puerto 2 a puerto 3
+                grafo1.mover(barco2, puerto3);
+
+                // Comprobar si el barco 2 ha llegado a puerto 3
+                if (barco2.getPuertoActual() == puerto3) {
+                        System.out.println("El barco 2 ha llegado a " + puerto3.getNombre());
+                }
+
+                // Impactar la posición 1 del barco 3
+                if (barco3.isHit(1)) {
+                        System.out.println("Se ha impactado la posición 1 del barco 3");
+                }
+
+                // Comprobar si el barco 3 está hundido
+                if (barco3.isSunk()) {
+                        System.out.println("El barco 3 ha sido hundido");
+                }
+
 
         }
 }

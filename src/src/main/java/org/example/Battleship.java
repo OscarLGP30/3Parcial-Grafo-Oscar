@@ -4,9 +4,25 @@ public class Battleship {
     private final int size = 5;
     private int hits = 0;
     private boolean[] isIsolated = { true, false, false, false, true }; // Indica si una posición está aislada
+    private Puerto puertoActual; // Puerto actual del barco
 
     // Constructor por defecto
     public Battleship() {}
+
+    // Constructor con el puerto inicial del barco
+    public Battleship(Puerto puerto) {
+        this.puertoActual = puerto;
+    }
+
+    // Método para obtener el puerto actual del barco
+    public Puerto getPuertoActual() {
+        return puertoActual;
+    }
+
+    // Método para establecer el puerto actual del barco
+    public void setPuertoActual(Puerto puerto) {
+        this.puertoActual = puerto;
+    }
 
     // Método para comprobar si el barco está hundido
     public boolean isSunk() {
@@ -26,5 +42,14 @@ public class Battleship {
         }
         return false;
     }
+
+    public Puerto getPuerto() {
+        return puertoActual;
+    }
+
+    public void setPuerto(Puerto puerto2) {
+        this.puertoActual = puerto2;
+    }
 }
+
 

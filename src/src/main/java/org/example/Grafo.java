@@ -80,6 +80,27 @@ public class Grafo {
         return puertoConMasAristas;
     }
 
+    public void agregarVertice(Puerto puerto) {
+        grafo.addVertex(puerto);
+    }
+
+    public void agregarBarco(Puerto puerto1, Puerto puerto2, int distancia) {
+        grafo.addVertex(puerto1);
+        grafo.addVertex(puerto2);
+        if (!puerto1.equals(puerto2)) {
+            grafo.addEdge(puerto1, puerto2);
+            grafo.setEdgeWeight(grafo.getEdge(puerto1, puerto2), distancia);
+        } else {
+            System.out.println("Error: No se permiten bucles en el grafo.");
+        }
+    }
+    
+    public void mover(Battleship barco1, Puerto puerto2) {
+Puerto puerto1 = barco1.getPuerto();
+        grafo.addEdge(puerto1, puerto2);
+        grafo.setEdgeWeight(grafo.getEdge(puerto1, puerto2), 1);
+        barco1.setPuerto(puerto2);
+    }
 }
 
 
