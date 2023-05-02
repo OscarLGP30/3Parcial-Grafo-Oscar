@@ -15,7 +15,7 @@ Hacer un diagrama de flujo a modo de guía.
 
 Implementar un grafo no dirigido que permita cargar puertos y las aristas que conecten dichos puertos, que permita resolver las siguientes tareas: 
 
-* cada arista debe tener la distancia que separa dichos puertos;  
-* realizar un barrido en profundidad desde el primer puerto en el grafo;  
-* determinar el camino más corto desde puerto Madero al puerto de Rodas;  
+* cada arista debe tener la distancia que separa dichos puertos; 
+* realizar un barrido en profundidad desde el primer puerto en el grafo; 
+* determinar el camino más corto desde puerto Madero al puerto de Rodas; 
 * determinar el puerto con mayor número de aristas y eliminarlo. 
