@@ -4,7 +4,7 @@ import java.util.*;
 
 public class GrafoNoDirigido {
 
-    private final Map<String, List<Arista>> grafo = new HashMap<>();
+    private final Map<String, ArrayList<Object>> grafo = new HashMap<>();
 
     // Clase interna que representa una arista
     private static class Arista {
@@ -48,7 +48,7 @@ public class GrafoNoDirigido {
     private void barridoEnProfundidadAux(String puerto, Set<String> visitados) {
         System.out.print(puerto + " ");
         visitados.add(puerto);
-        for (Arista arista : grafo.get(puerto)) {
+        for (Object arista : grafo.get(puerto)) {
             if (!visitados.contains(arista.destino)) {
                 barridoEnProfundidadAux(arista.destino, visitados);
             }
@@ -84,7 +84,7 @@ public class GrafoNoDirigido {
             if (actual.equals(puertoDestino)) {
                 break; // Ya llegamos al puerto destino, podemos salir del bucle
             }
-            for (Arista arista : grafo.get(actual)) {
+            for (Object arista : grafo.get(actual)) {
                 int distanciaNueva = distancias.get(actual) + arista.distancia;
                 if (distanciaNueva < distancias.get(arista.destino)) {
                     distancias.put(arista.destino, distanciaNueva);
@@ -118,8 +118,9 @@ public class GrafoNoDirigido {
         }
         grafo.remove(puertoConMasAristas);
         for (String puerto : grafo.keySet()) {
-            List<Arista> aristas = grafo.get(puerto);
-            aristas.removeIf(arista -> arista.destino.equals(puertoConMasAristas));
+            List<Object> aristas = grafo.get(puerto);
+            String finalPuertoConMasAristas = puertoConMasAristas;
+            aristas.removeIf(arista -> arista.destino.equals(finalPuertoConMasAristas));
         }
         return puertoConMasAristas;
     }
@@ -130,7 +131,7 @@ public class GrafoNoDirigido {
         StringBuilder sb = new StringBuilder();
         for (String puerto : grafo.keySet()) {
             sb.append(puerto).append(": ");
-            for (Arista arista : grafo.get(puerto)) {
+            for (Object arista : grafo.get(puerto)) {
                 sb.append("(").append(arista.destino).append(", ").append(arista.distancia).append(") ");
             }
             sb.append("\n");
